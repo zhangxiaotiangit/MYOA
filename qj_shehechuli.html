@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link type="text/css" rel="stylesheet" href="css/OA.css">
+<script  src="js/jquery-1.7.2.js"></script>
+<script src="js/scroll.js"></script>
+
+<!--[if IE 6]>
+	<script src="js/IE6PNG.js"></script>
+    <script>
+    	DD_belatedPNG.fix(".nav img,.have_down");
+    </script>
+      <![endif]-->
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>CNPE 采购部-- OA系统</h1>
+    <div class="nav">
+      <ul>
+        <li><a href="#"><img src="img/icon01.png"><span>请假</span></a></li>
+        <li><a href="#"><img src="img/icon02.png"><span>物品管理</span></a></li>
+        <li><a href="#"><img src="img/icon03.png"><span>宴请</span></a></li>
+        <li><a href="#"><img src="img/icon05.png"><span>个人中心</span></a></li>
+        <li><a href="#"><img src="img/icon04.png"><span>设置</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="blank10"></div>
+  <div class="oa_content">
+    <div class="oa_left">
+      <H1>当前用户：<span>admin</span></H1>
+      <h2>请假管理：</h2>
+      <h3><a href="#" class="h3_cur"> > <span>申请</span></a></h3>
+      <!-- <h3><a href="#" class="have_down"> > <span>发起</span></a> </h3>
+        <div class="downbox">
+          <ul>
+           <li><a href="#">发起发起</a></li>
+            <li><a href="#">发起发起</a></li>
+             <li><a href="#">发起发起</a></li>
+              <li><a href="#">发起发起</a></li>
+          </ul>
+        </div>-->
+      
+      <h3><a href="#"> > <span>待审核</span></a> <em>1</em></h3>
+      <h3><a href="#"> > <span>通过</span></a></h3>
+      <h3><a href="#"> > <span>未通过</span></a></h3>
+      <h3><a href="#"> > <span>待处理</span></a> <em>16</em></h3>
+      <h3><a href="#"> > <span>申请流程</span></a></h3>
+    </div>
+    <div class="oa_right">
+      <div class="nav_mbx">
+        <p><a href="#">HOME </a> > <a href="#">请假管理</a> > <a  href="#">申请</a></p>
+      </div>
+      <div class="blank10"></div>
+      <h1 class="oa_h1"><span>待审核（通过/未通过）请假信息</span></h1>
+      <div class="blank20"></div>
+      
+        <div class="list_head lis_head_qj widthP96 bkhui">
+          <table width="100%" border="0">
+  <tr>
+   
+    <td width="5%"><input type="checkbox"   value="1"  name="allcheck" class="choke"></td>
+    <td width="30%">标题</td>
+    <td width="25%">休假日期</td>
+    <td width="10%">请假天数</td>
+    <td width="20%">状态</td>
+    <td width="10%">操作</td>
+  </tr>
+</table>
+
+        
+        
+        </div>
+ <div class="list_mes  widthP96 list_mes_qj ">
+ <div class="blank20"></div>
+<table width="100%" border="1" >
+  <tr>
+    <td width="5%" valign="middle" align="center"><input type="checkbox" name="items"   value="1"></td>
+    <td width="30%"><a href="#">2014年中秋节情节申请</a></td>
+    <td width="25%"><span>2014/08/22 至 2014/08/23</span></td>
+    <td width="10%">1</td>
+    <td width="20%">待审核</td>
+   <td width="10%"><a href="#">退回</a> / <a href="#">通过</a></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="middle" align="center"><input type="checkbox" name="items"   value="1"></td>
+    <td width="30%"><a href="#">2014年中秋节情节申请</a></td>
+    <td width="25%"><span>2014/08/22 至 2014/08/23</span></td>
+    <td width="10%">1</td>
+    <td width="20%">待审核</td>
+   <td width="10%"><a href="#">退回</a> / <a href="#">通过</a></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="middle" align="center"><input type="checkbox" name="items"   value="1"></td>
+    <td width="30%"><a href="#">2014年中秋节情节申请</a></td>
+    <td width="25%"><span>2014/08/22 至 2014/08/23</span></td>
+    <td width="10%">1</td>
+    <td width="20%">待审核</td>
+   <td width="10%"><a href="#">退回</a> / <a href="#">通过</a></td>
+  </tr>
+  
+</table>
+
+        
+        
+        </div>       
+    
+    
+    
+      
+    </div>
+  </div>
+</div>
+</div>
+<script>
+ 	$(document).ready(function(e) {
+		//控制复选框的js
+	  $(".choke").click(function() {
+		 
+        if (this.checked == true) {
+		   
+			 $("input[name=allcheck]").attr("checked", true);
+            $("input[name=items]").each(function() {  
+                $(this).attr("checked", true);  
+            }) 
+        } else {  
+		     $("input[name=allcheck]").attr("checked", false);
+            $("input[name=items]").each(function() {  
+                $(this).attr("checked", false);  
+            })
+        }  
+    });  
+		
+		
+		
+		
+		//控制填写申请页面的JS
+		$("#txqjt").click(function(){
+			$("#jt_box").slideDown(1000)
+			 $("#qj_mes").hide()
+			})
+		$("#jq_close").click(function(){
+			$("#jt_box").hide()
+			 $("#qj_mes").slideDown(1000)
+			})	
+		
+		
+		
+		
+		//控制左边导航的高度
+		var rightheight= $(".oa_right").height();
+		if(rightheight>700){
+			$(".oa_left").css("height",rightheight)
+			}
+       //控制nav样式
+	   $(".nav li").hover(function(){
+		 
+		 $(this).css("background","#03F")
+		},function(){
+			 $(this).css("background","none")	
+		})
+			
+		//控制左侧导航的 手风琴特性
+	$(".have_down").click(function(){
+		var thisi=$(".have_down").index(this);
+		var showi=$(".downbox:visible").index(".downbox");
+		if(thisi==showi){
+			}
+		else{	
+		$(".have_down").parent("h3").next(".downbox").slideUp();
+		$(this).parent("h3").next(".downbox").slideDown();
+		 }
+	})	       
+ });
+    </script>
+
+</body>
+
+</html>
